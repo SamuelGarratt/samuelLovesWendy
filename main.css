@@ -1,7 +1,17 @@
 body{
   
 }
-
+h1 {
+	color: pink;
+}
+h2 {
+	color: grey;
+}
 p{
   
+}
+
+img {
+	max-width:100%;
+	width: auto;
 }
