@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>Pray Reading</title>
+	<link rel="stylesheet" href="main.css">	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Pray Reading</h1>
+<div>Time up in <span id="time">150</span> seconds!</div>
+<script>
+window.onload = function () {
+    var seconds = 150,
+        display = document.querySelector('#time');
+    startTimer(seconds, display);
+};
+</script>
+<script src="..\js\countdown.js">
+</script>
+</body>
+</html>
