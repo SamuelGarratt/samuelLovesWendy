@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Calling</title>
+	<link rel="stylesheet" href="../main.css">	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        var period=[
+                    {title:'Calling', description:'Calling on the name of the Lord to help us set our mind on the spirit', time:30},
+                    {title:'Prayer', description:'Opening our heart to the Lord telling Him what we want from Him', time:60}
+                   ];
+        var index = 0;
+        
+        
+    </script>
+<h1></h1>
+<p>Period <input type="text" class="counter" value="0"/></p>
+<section><p id="describeMe"></p></section>
+<div>Time up in 
+    <div id="clockdiv">
+    <div>
+    <span class="minutes"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="smalltext">Seconds</div>
+  </div>  
+    </div>
+</div>
+<button type="button" class="increment-btn">Next</button>
+<script>
+    var $button = document.querySelector('.increment-btn');
+        var $counter = document.querySelector('.counter');
+
+        $button.addEventListener('click', function(){
+            var count = parseInt($counter.value);
+            if (count < 6)
+            {
+                $counter.value = parseInt($counter.value) + 1; 
+                index++;
+                // refresh values on the screen
+                document.getElementsByTagName("h1")[0].innerHTML = period[index].title;
+                document.getElementById("describeMe").innerHTML = period[index].description;
+                
+                // Set new time
+                timeInSeconds = period[index].time;   
+                
+                var newTime = Date.parse(new Date());
+                var newdeadline = new Date(newTime + timeInSeconds*1000);
+
+                initializeClock('clockdiv', newdeadline);
+            }
+            else {
+                $counter.value = 0;
+            }
+        }, false); 
+    document.getElementsByTagName("h1")[0].innerHTML = period[index].title;
+    document.getElementById("describeMe").innerHTML = period[index].description;
+    var timeInSeconds = period[index].time;
+</script>
+<script src="..\js\countdown.js">
+</script>
+
+</body>
+</html>
