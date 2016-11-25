@@ -10,6 +10,9 @@ h2 {
 p{
   
 }
+.period {
+    color:forestgreen;
+}
 
 #clockdiv > div{
     padding: 10px;
