@@ -44,11 +44,11 @@ function initializeClock(id, endtime) {
 
   updateClock();
   var timeinterval = setInterval(updateClock, 1000);
+  return timeinterval;
 }
-
 
 
 var currentTime = Date.parse(new Date());
 var deadline = new Date(currentTime + timeInSeconds*1000);
 
-initializeClock('clockdiv', deadline);
+var currentTimer = initializeClock('clockdiv', deadline);

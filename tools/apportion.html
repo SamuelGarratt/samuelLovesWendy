@@ -48,13 +48,15 @@
                 document.getElementsByTagName("h1")[0].innerHTML = period[index].title;
                 document.getElementById("describeMe").innerHTML = period[index].description;
                 
+                // Clear interval
+                clearInterval(currentTimer);
                 // Set new time
                 timeInSeconds = period[index].time;   
                 
                 var newTime = Date.parse(new Date());
                 var newdeadline = new Date(newTime + timeInSeconds*1000);
 
-                initializeClock('clockdiv', newdeadline);
+                currentTimer = initializeClock('clockdiv', newdeadline);
             }
             else {
                 $counter.value = 0;
