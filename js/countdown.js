@@ -21,9 +21,15 @@ function initializeClock(id, endtime) {
   function updateClock() {
     var t = getTimeRemaining(endtime);
     
-    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
+    if (t.total > 0) {
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+    }
+    else {
+        minutesSpan.innerHTML = '00';
+        secondsSpan.innerHTML = '00';
+    }
+      
     if (t.total <= 0) {
       clearInterval(timeinterval);
     }
